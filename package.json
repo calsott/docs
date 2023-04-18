@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "Calsott documentation site",
   "scripts": {
+    "deps:ci": "npm ci",
+    "deps:clean": "rm -rf ./node_modules && rm -f ./package-lock.json",
+    "deps": "npm run deps:clean && npm install --no-audit --no-fund",
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
