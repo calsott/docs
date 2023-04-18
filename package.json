@@ -8,7 +8,8 @@
     "deps": "npm run deps:clean && npm install --no-audit --no-fund",
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,11 @@
   },
   "devDependencies": {
     "@types/node": "18.11.10",
+    "eslint": "8.38.0",
+    "eslint-config-next": "13.3.0",
+    "eslint-config-prettier": "8.8.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "prettier": "2.8.7",
     "typescript": "4.9.3"
   }
 }
