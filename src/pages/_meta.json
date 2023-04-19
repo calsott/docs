@@ -4,8 +4,8 @@
   "adapters": {
     "title": "Adapters"
   },
-  "targets": {
-    "title": "Targets"
+  "providers": {
+    "title": "Providers"
   },
   "---": {
     "type": "separator"

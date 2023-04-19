@@ -1,0 +1,64 @@
+# Datadog Provider
+
+The Datadog provider allows you to send web performance metrics to Datadog
+
+## What are Datadog metrics?
+
+Datadog metrics are numerical values that can track anything about your environment over time, from latency to error rates to user signups.
+We use Datadog metrics to monitor each Core Web Vital metric for each page load.
+
+Check out the [Datadog documentation](https://docs.datadoghq.com/metrics/) to learn more about Datadog metrics.
+
+## How to use the Datadog provider?
+
+To use the Datadog provider, you need to add the following provider code to your `.calsott.js` config file,
+inside the `providers` array.
+
+```js
+{
+  name: "datadog",
+  options: {
+    apiKey: process.env.DATADOG_API_KEY,
+    appKey: process.env.DATADOG_APP_KEY,
+    site: "datadoghq.eu",
+    host: "twinandchic.com", 
+    prefix: "tc." 
+  }
+}
+```
+
+This provider configuration accepts the following options:
+
+* `name` - The name of the provider. It must be `datadog` in lowercase. (required)
+* `options` - An object containing the provider options. (required)
+
+Some options are required, and some are optional. See the most common options below:
+
+* `apiKey` - Your Datadog API key. (required)
+* `appKey` - Your Datadog application key. (required)
+* `prefix` - A prefix to add to all metrics. (optional)
+* `host` - The host name to associate with metrics.`  (optional)
+* `site` - The Datadog site to send metrics to. Default: `datadoghq.com` (optional)
+* `defaultTags` - An array of tags to add to all metrics. Default: `[]` (optional)
+  * Set tags that are common to all metrics.
+
+> We use `datadog-metrics` package to send metrics to Datadog. You can find the full list of options in the [node-datadog-metrics documentation](https://github.com/dbader/node-datadog-metrics)
+
+## How to send different tags to each URL metrics?
+
+In the configuration file, you can add a `tags` array to each URL object. This tags will apply only for that URL.
+
+```js
+module.exports = {
+  urls: [
+    {
+      href: "https://calsott.com",
+      tags: ["page:home"]
+    }
+  ],
+}
+```
+
+## How to get your Datadog API and application keys
+
+Learn how to get your Datadog API and application keys in the [API and Application Keys](https://docs.datadoghq.com/account_management/api-app-keys/) section of the Datadog documentation.
