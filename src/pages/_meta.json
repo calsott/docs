@@ -1,11 +1,11 @@
 {
   "index": "Introduction",
   "quick-start": "Quick Start",
-  "adapters": {
-    "title": "Adapters"
-  },
   "providers": {
     "title": "Providers"
+  },
+  "adapters": {
+    "title": "Adapters"
   },
   "---": {
     "type": "separator"
