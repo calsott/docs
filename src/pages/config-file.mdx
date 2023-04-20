@@ -1,0 +1,66 @@
+# Configuration
+
+All the configuration should be done in the config file.
+
+The config file is located in the root of the project and is called `.calsott.js`, but you could use
+a custom name and place it elsewhere if you use `--config` option when running the CLI.
+
+Take a look at the following next.config.js example:
+  
+```js
+module.exports = {
+  urls: [],
+  providers: []
+}
+```
+
+## URLs to check
+
+Add the URLs you want to check in the `urls` array. 
+
+Each URL object should have:
+
+- `href`: the URL to check (required)
+- `tags`: an array of tags (strings) to add to the metrics sent to the providers, for that URL.
+
+An example of a URL object:
+
+```js
+{
+  href: "https://docs.calsott.com",
+  tags: ["page:introduction"]
+}
+```
+
+## Providers
+
+Add the providers you want to use in the `providers` array. All providers will receive the metrics of all the URLs.
+
+> ⚠️ Each provider object could be different. Please, check the documentation of each provider to see how to configure it.
+
+## Full example
+
+See a full example of a config file below:
+
+```js
+module.exports = {
+  urls: [
+    {
+      href: "https://docs.calsott.com",
+      tags: ["page:introduction"]
+    }
+  ],
+  providers: [
+    {
+      name: "datadog",
+      options: {
+        apiKey: process.env.DATADOG_API_KEY,
+        appKey: process.env.DATADOG_APP_KEY,
+        site: "datadoghq.eu",
+        host: "docs.calsott.com",
+        prefix: "docs."
+      }
+    }
+  ]
+}
+```

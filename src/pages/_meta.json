@@ -1,11 +1,10 @@
 {
-  "index": "Introduction",
-  "quick-start": "Quick Start",
+  "index": "Overview",
+  "getting-started": "Getting started",
+  "config-file": "Configuration",
+  "adapters": "CI Adapters",
   "providers": {
     "title": "Providers"
-  },
-  "adapters": {
-    "title": "Adapters"
   },
   "---": {
     "type": "separator"

@@ -1,0 +1,27 @@
+# Continous Integration Adapters
+
+Calsott is compatible with the following CI:
+
+👉 GitHub Actions
+
+> ⚠️ See the [Roadmap](/roadmap#adapters) to know what comes next.
+
+## What is an adapter?
+
+An adapter is a piece of code that allows Calsott get information from CI run and use it to add
+context to the metrics that it will send to providers.
+
+For example, the branch name or the commit hash are information that can be used to add valuable
+information to metrics when we develop new features or we are improving the application performance.
+
+## What are the benefits of it?
+
+It will help you to understand how your changes are affecting the performance of your application.
+Detect performance regressions and identify when and where they happened.
+
+## What happens when I run Calsott outside of a CI?
+
+Calsott will try to get the information from the environment variables and if it can't find it,
+it can not use them.
+
+You can run Calsott locally and it will work as expected, but you will not be able to use CI metadata information.
