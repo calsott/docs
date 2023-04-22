@@ -12,6 +12,20 @@ const config: DocsThemeConfig = {
     },
     footer: {
         text: 'Calsott docs'
+    },
+    head: (
+        <>
+            <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1.0"
+            />
+            <meta property="og:title" content="Calsott" />
+        </>
+    ),
+    useNextSeoProps() {
+        return {
+            titleTemplate: '%s – Calsott'
+        }
     }
 }
 
