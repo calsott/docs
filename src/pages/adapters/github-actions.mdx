@@ -33,3 +33,29 @@ jobs:
     - name: Run CLI
       run: npx calsott-cli
 ```
+
+Using this configuration file in the root of your project:
+
+```js
+// .calsott.js
+module.exports = {
+  urls: [
+    {
+      href: "https://mywebsite.com",
+      tags: ["page:home"]
+    }
+  ],
+  providers: [
+    {
+      name: "datadog",
+      options: {
+        apiKey: process.env.DATADOG_API_KEY, // add to your Github Actions secrets
+        appKey: process.env.DATADOG_APP_KEY, // add to your Github Actions secrets
+        site: "datadoghq.eu", // default: datadoghq.com
+        host: "mywebsite.com",
+        prefix: "abc."
+      }
+    }
+  ]
+} 
+```
