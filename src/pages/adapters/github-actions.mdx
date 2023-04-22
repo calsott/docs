@@ -4,7 +4,11 @@ An example of a Github Actions workflow:
 
 ```yaml
 name: Audit
-on: [push]
+on:
+  pull_request:
+  push:
+    branches:
+      - main
 env:
   DATADOG_API_KEY: ${{ secrets.DATADOG_API_KEY }}
   DATADOG_APP_KEY: ${{ secrets.DATADOG_APP_KEY }}
